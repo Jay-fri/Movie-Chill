@@ -11,7 +11,6 @@ const movies = [
   { id: 2, title: "Movie 2", description: "Description of Movie 2" },
   { id: 3, title: "Movie 3", description: "Description of Movie 3" },
   { id: 4, title: "Movie 4", description: "Description of Movie 4" },
-  // Add more movie objects here
 ];
 
 const Navbar = () => {
@@ -29,8 +28,8 @@ const Navbar = () => {
   );
 
   return (
-    <div>
-      <nav className="fixed top-0 w-full h-[70px] bg-black p-[15px]">
+    <div className="z-50">
+      <nav className="fixed top-0 z-50 w-full h-[70px] bg-black p-[15px]">
         <div className="flex justify-between  items-center ">
           <img className="w-[180px] pr-[10px]" src={Logo} alt="Logo" />
           <div className="hidden gap-9">

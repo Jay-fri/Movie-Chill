@@ -13,7 +13,7 @@ import img11 from "../assets/img/cardmovie10.jpg";
 import img12 from "../assets/img/cardmovie11.jpg";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Resetpassword = () => {
   const localImages = [
     img1,
     img2,
@@ -55,20 +55,22 @@ const Login = () => {
             </div>
           ))}
         </div>
-        <div className="absolute font-[600] z-40 text-[1.3rem] inset-0 bg-white bg-opacity-10 backdrop-blur-md rounded px-[10px] py-[40px] text-start top-[30%] left-[5%] w-[90%] h-[130px]">
-          Log in to access a{" "}
-          <span className="text-yellow-600">personalized</span> cinematic{" "}
-          <span className="text-yellow-600">experience</span>.🤩
+        <div className="absolute font-[600] z-40 text-[1.3rem] inset-0 bg-white bg-opacity-10 backdrop-blur-md rounded-md px-[10px] py-[40px] text-start top-[30%] left-[5%] w-[90%] h-fit">
+          Once you receive the reset link by email, follow the{" "}
+          <span className="text-yellow-600">instructions</span> to choose a new
+          password and access your{" "}
+          <span className="text-yellow-600">account</span>in no time.
         </div>
       </div>
 
       <div className="flex flex-col gap-7 w-[80vw] mx-auto mt-[30px] mb-[50px]">
         <div className="flex flex-col gap-1">
           <p className="font-[600] text-[1.5rem]">
-            Welcome to <span className="text-yellow-600">Movie Chill</span>👋
+            Forgot <span className="text-yellow-600">Password</span>? 🤔
           </p>
           <p className="font-[300] text-[0.9rem]">
-            Log in to access your Movie Chill account
+            If you've forgotten your password, don't worry. You can easily reset
+            it by following the steps below.
           </p>
         </div>
         <div className="flex flex-col gap-2">
@@ -79,35 +81,16 @@ const Login = () => {
             placeholder="Enter your email"
           />
         </div>
-        <div className="flex flex-col gap-2">
-          <p className="font-[500] text-[1rem]">Password</p>
-          <input
-            className="w-full bg-transparent border rounded h-[50px] p-3"
-            type="password"
-            placeholder="Enter your password"
-          />
-        </div>
-        <Link
-          to="/resetpassword"
-          className="text-yellow-600 w-full flex justify-end hover:underline"
-        >
-          Forgot password?
-        </Link>
+
         <Link
           className="w-full bg-yellow-600 flex items-center justify-center h-[50px] rounded-md hover:bg-yellow-700 transition-all "
-          to="/profile"
+          to="/"
         >
-          LOG IN
+          RESET PASSWORD
         </Link>
-        <div className="w-[300px] text-center">
-          Don't have an account yet? You can{" "}
-          <Link to="/signup" className="text-yellow-600 hover:underline">
-            create an account here.
-          </Link>{" "}
-        </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Resetpassword;

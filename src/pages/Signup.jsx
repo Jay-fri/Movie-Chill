@@ -13,7 +13,7 @@ import img11 from "../assets/img/cardmovie10.jpg";
 import img12 from "../assets/img/cardmovie11.jpg";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Signup = () => {
   const localImages = [
     img1,
     img2,
@@ -28,7 +28,6 @@ const Login = () => {
     img11,
     img12,
   ];
-
   return (
     <div className="flex flex-col">
       <div className="relative overflow-hidden h-[400px] w-full">
@@ -55,28 +54,37 @@ const Login = () => {
             </div>
           ))}
         </div>
-        <div className="absolute font-[600] z-40 text-[1.3rem] inset-0 bg-white bg-opacity-10 backdrop-blur-md rounded px-[10px] py-[40px] text-start top-[30%] left-[5%] w-[90%] h-[130px]">
-          Log in to access a{" "}
-          <span className="text-yellow-600">personalized</span> cinematic{" "}
-          <span className="text-yellow-600">experience</span>.🤩
+        <div className="absolute font-[600] z-40 text-[1.3rem] inset-0 bg-white bg-opacity-10 backdrop-blur-md rounded px-[10px] py-[40px] text-start top-[30%] left-[5%] w-[90%] h-fit">
+          Join the <span className="text-yellow-600">Chill community</span>{" "}
+          today and explore a world of cinematic{" "}
+          <span className="text-yellow-600">entertainment</span>!🤩
         </div>
       </div>
 
       <div className="flex flex-col gap-7 w-[80vw] mx-auto mt-[30px] mb-[50px]">
         <div className="flex flex-col gap-1">
           <p className="font-[600] text-[1.5rem]">
-            Welcome to <span className="text-yellow-600">Movie Chill</span>👋
+            Ready to join the <span className="text-yellow-600">community</span>
+            😁?
           </p>
-          <p className="font-[300] text-[0.9rem]">
-            Log in to access your Movie Chill account
+          <p className="font-[300] text-[0.9rem] text-gray-400">
+            Fill out the form below to create your Movie Chill account now!
           </p>
+        </div>
+        <div className="flex flex-col gap-2">
+          <p className="font-[500] text-[1rem]">Username</p>
+          <input
+            className="w-full bg-transparent border rounded h-[50px] p-3"
+            type="email"
+            placeholder="Your username here"
+          />
         </div>
         <div className="flex flex-col gap-2">
           <p className="font-[500] text-[1rem]">Email</p>
           <input
             className="w-full bg-transparent border rounded h-[50px] p-3"
             type="email"
-            placeholder="Enter your email"
+            placeholder="Your email here"
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -84,25 +92,27 @@ const Login = () => {
           <input
             className="w-full bg-transparent border rounded h-[50px] p-3"
             type="password"
-            placeholder="Enter your password"
+            placeholder="Your password here"
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <p className="font-[500] text-[1rem]">Confirm Password</p>
+          <input
+            className="w-full bg-transparent border rounded h-[50px] p-3"
+            type="password"
+            placeholder="Your password here"
           />
         </div>
         <Link
-          to="/resetpassword"
-          className="text-yellow-600 w-full flex justify-end hover:underline"
-        >
-          Forgot password?
-        </Link>
-        <Link
           className="w-full bg-yellow-600 flex items-center justify-center h-[50px] rounded-md hover:bg-yellow-700 transition-all "
-          to="/profile"
+          to="/"
         >
-          LOG IN
+          SIGN UP
         </Link>
         <div className="w-[300px] text-center">
-          Don't have an account yet? You can{" "}
-          <Link to="/signup" className="text-yellow-600 hover:underline">
-            create an account here.
+          Already have an account? You can{" "}
+          <Link to="/login" className="text-yellow-600 hover:underline">
+            log in here.
           </Link>{" "}
         </div>
       </div>
@@ -110,4 +120,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
