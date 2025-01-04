@@ -8,11 +8,10 @@ import Similar6 from "../assets/img/similar6.jpg";
 import Madame from "../assets/img/madamebg.jpg";
 import Play from "../assets/svg/play.svg";
 import Ratings from "../assets/svg/ratings.svg";
-import ImageWithHoverEffect from "../components/ImageWithHoverEffect";
 import { Link } from "react-router-dom";
 
 const movies = [
-  { id: 0, url: Madame, alt: "Madame Web" },
+  { id: 0, url: Similar6, alt: "Madame Web" },
   { id: 1, url: Similar1, alt: "BatMan Movie" },
   { id: 2, url: Similar2, alt: "Mona Lisa" },
   { id: 3, url: Similar3, alt: "GodZilla" },
@@ -152,7 +151,7 @@ const Home = () => {
             }}
           >
             <div className="w-full  h-full bg-gradient-to-r from-black to-black/20 opacity-90 absolute"></div>
-            <div className="flex z-50 flex-col gap-[10px] m-[20px]">
+            <div className="flex z-10 flex-col gap-[10px] m-[20px]">
               <p className="font-[600] text-[1.4rem]">{selectedImage.title}</p>
               <div className="flex gap-[10px]">
                 <img className="w-[100px]" src={Ratings} alt="" />
@@ -172,6 +171,235 @@ const Home = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-[30px] p-[10px] mt-[35px]">
+        <div className="font-[600] text-[1.3rem]">RECENT MOVIES</div>
+        <div className="flex overflow-x-auto gap-[15px]">
+          <img
+            className="w-[160px] h-[250px] rounded-[10px]"
+            src={Similar2}
+            alt=""
+          />
+          <img
+            className="w-[160px] h-[250px] rounded-[10px]"
+            src={Similar4}
+            alt=""
+          />
+          <img
+            className="w-[160px] h-[250px] rounded-[10px]"
+            src={Similar5}
+            alt=""
+          />
+          <img
+            className="w-[160px] h-[250px] rounded-[10px]"
+            src={Similar1}
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-[20px] mt-[40px] p-[10px] pb-[20px] bg-gray-950">
+        <div className="font-[600] text-[1.3rem]">MOVIE GENRES</div>
+        <div className="grid grid-cols-3 gap-[10px]">
+          <div className="font-[300] flex items-center justify-center text-[0.9rem] p-[10px] border-[2px] border-yellow-500 w-[100px] rounded">
+            Action
+          </div>
+          <div className="font-[300] flex items-center justify-center text-[0.9rem] p-[10px] border-[2px] border-yellow-500 w-[100px] rounded">
+            Adventure
+          </div>
+          <div className="font-[300] flex items-center justify-center text-[0.9rem] p-[10px] border-[2px] border-yellow-500 w-[100px] rounded">
+            Animation
+          </div>
+          <div className="font-[300] flex items-center justify-center text-[0.9rem] p-[10px] border-[2px] border-yellow-500 w-[100px] rounded">
+            Comedy
+          </div>
+          <div className="font-[300] flex items-center justify-center text-[0.9rem] p-[10px] border-[2px] border-yellow-500 w-[100px] rounded">
+            Crime
+          </div>
+          <div className="font-[300] flex items-center justify-center text-[0.9rem] p-[10px] border-[2px] border-yellow-500 w-[100px] rounded">
+            Documentary
+          </div>
+          <div className="font-[300] flex items-center justify-center text-[0.9rem] p-[10px] border-[2px] border-yellow-500 w-[100px] rounded">
+            Drama
+          </div>
+          <div className="font-[300] flex items-center justify-center text-[0.9rem] p-[10px] border-[2px] border-yellow-500 w-[100px] rounded">
+            Family
+          </div>
+          <div className="font-[300] flex items-center justify-center text-[0.9rem] p-[10px] border-[2px] border-yellow-500 w-[100px] rounded">
+            Fantastic
+          </div>
+          <div className="font-[300] flex items-center justify-center text-[0.9rem] p-[10px] border-[2px] border-yellow-500 w-[100px] rounded">
+            History
+          </div>
+          <div className="font-[300] flex items-center justify-center text-[0.9rem] p-[10px] border-[2px] border-yellow-500 w-[100px] rounded">
+            Horror
+          </div>
+          <div className="font-[300] flex items-center justify-center text-[0.9rem] p-[10px] border-[2px] border-yellow-500 w-[100px] rounded">
+            Music
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-[60px] flex flex-col gap-[20px] p-[10px]">
+        <div className="font-[600] text-[1.3rem]">TRENDING</div>
+        <div className="scroller-container gap-[20px]">
+          <div
+            className="botton-div relative"
+            style={{
+              backgroundImage: `url(${selectedImage.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              height: "370px",
+              color: "white",
+              display: "flex",
+            }}
+          >
+            <div className="w-full  h-full bg-gradient-to-r from-black to-black/20 opacity-90 absolute"></div>
+            <div className="flex z-10 flex-col gap-[10px] m-[20px]">
+              <p className="font-[600] text-[1.4rem]">{selectedImage.title}</p>
+              <div className="flex gap-[10px]">
+                <img className="w-[100px]" src={Ratings} alt="" />
+                <div className="font-[600] text-[1rem] text-gray-400">5.9</div>
+                <div className="font-[600] text-[1rem]">2024</div>
+              </div>
+              <div className="font-[300] text-[0.9rem]">
+                {selectedImage.description}
+              </div>
+              <div className="flex gap-[10px]">
+                <div className="flex hover:bg-yellow-600 transition-all gap-[10px] cursor-pointer items-center bg-yellow-500 p-[10px] rounded-md">
+                  <div className="font-[400] text-[0.9rem]">WATCH TRAILER</div>
+                  <img className="w-[20px]" src={Play} alt="" />
+                </div>
+                <div className="p-[10px] cursor-pointer hover:border-yellow-600 transition-all font-[400] text-[0.9rem] border-[2px] border-yellow-500 rounded">
+                  MORE DETAILS
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="scroller">
+            {images.map((item, index) => (
+              <img
+                key={index}
+                src={item.image}
+                alt={`Image ${index + 1}`}
+                onClick={() =>
+                  handleImageClick(item.image, item.title, item.description)
+                }
+                className={`scroller-image1 ] ${
+                  selectedImage.image === item.image ? "selected" : ""
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-[30px] p-[10px] mt-[35px]">
+        <div className="font-[600] text-[1.3rem]">DRAMA</div>
+        <div className="flex overflow-x-auto gap-[15px]">
+          <img
+            className="w-[160px] h-[250px] rounded-[10px]"
+            src={Similar5}
+            alt=""
+          />
+          <img
+            className="w-[160px] h-[250px] rounded-[10px]"
+            src={Similar2}
+            alt=""
+          />
+          <img
+            className="w-[160px] h-[250px] rounded-[10px]"
+            src={Similar4}
+            alt=""
+          />
+
+          <img
+            className="w-[160px] h-[250px] rounded-[10px]"
+            src={Similar1}
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-[30px] p-[10px] mt-[35px]">
+        <div className="font-[600] text-[1.3rem]">TV LIVES</div>
+        <div className="flex overflow-x-auto gap-[15px]">
+          <img
+            className="w-[140px] h-[200px] rounded-[10px]"
+            src={Similar2}
+            alt=""
+          />
+          <img
+            className="w-[140px] h-[200px] rounded-[10px]"
+            src={Similar4}
+            alt=""
+          />
+          <img
+            className="w-[140px] h-[200px] rounded-[10px]"
+            src={Similar5}
+            alt=""
+          />
+          <img
+            className="w-[140px] h-[200px] rounded-[10px]"
+            src={Similar1}
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div className="mt-[60px] flex flex-col gap-[20px] p-[10px]">
+        <div className="font-[600] text-[1.3rem]">UPCOMING MOVIES</div>
+        <div className="scroller-container gap-[30px]">
+          <div
+            className="botton-div relative"
+            style={{
+              backgroundImage: `url(${selectedImage.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              height: "370px",
+              color: "white",
+              display: "flex",
+            }}
+          >
+            <div className="w-full  h-full bg-gradient-to-r from-black to-black/20 opacity-90 absolute"></div>
+            <div className="flex z-10 flex-col gap-[10px] m-[20px]">
+              <p className="font-[600] text-[1.4rem]">{selectedImage.title}</p>
+              <div className="flex gap-[10px]">
+                <img className="w-[100px]" src={Ratings} alt="" />
+                <div className="font-[600] text-[1rem] text-gray-400">5.9</div>
+                <div className="font-[600] text-[1rem]">2024</div>
+              </div>
+              <div className="font-[300] text-[0.9rem]">
+                {selectedImage.description}
+              </div>
+              <div className="flex gap-[10px]">
+                <div className="flex hover:bg-yellow-600 transition-all gap-[10px] cursor-pointer items-center bg-yellow-500 p-[10px] rounded-md">
+                  <div className="font-[400] text-[0.9rem]">WATCH TRAILER</div>
+                  <img className="w-[20px]" src={Play} alt="" />
+                </div>
+                <div className="p-[10px] cursor-pointer hover:border-yellow-600 transition-all font-[400] text-[0.9rem] border-[2px] border-yellow-500 rounded">
+                  MORE DETAILS
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="scroller">
+            {images.map((item, index) => (
+              <img
+                key={index}
+                src={item.image}
+                alt={`Image ${index + 1}`}
+                onClick={() =>
+                  handleImageClick(item.image, item.title, item.description)
+                }
+                className={`scroller-image1 ] ${
+                  selectedImage.image === item.image ? "selected" : ""
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>

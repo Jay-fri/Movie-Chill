@@ -29,6 +29,17 @@ const Resetpassword = () => {
     img12,
   ];
 
+  const handleResetClick = (e) => {
+    const emailInput = document.querySelector('input[name="email"]');
+    const email = emailInput.value.trim();
+    if (!email) {
+      e.preventDefault();
+      alert("Please enter a valid email.");
+    } else {
+      alert("Email Sent");
+    }
+  };
+
   return (
     <div className="flex flex-col">
       <div className="relative overflow-hidden h-[400px] w-full">
@@ -79,12 +90,14 @@ const Resetpassword = () => {
             className="w-full bg-transparent border rounded h-[50px] p-3"
             type="email"
             placeholder="Enter your email"
+            required
           />
         </div>
 
         <Link
           className="w-full bg-yellow-600 flex items-center justify-center h-[50px] rounded-md hover:bg-yellow-700 transition-all "
           to="/"
+          onClick={handleResetClick}
         >
           RESET PASSWORD
         </Link>

@@ -10,6 +10,13 @@
 
 body {
   background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 .page {
@@ -49,9 +56,27 @@ body {
   flex-shrink: 0;
 }
 
+.scroller-image1 {
+  width: 110px;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  flex-shrink: 0;
+}
+
 .scroller-image:hover,
+.scroller-image1:hover,
 .scroller-image.selected {
   border: 2px solid orange;
+}
+
+.scroller-image1.selected {
+  border: 2px solid orange;
+  width: 140px;
+  height: 180px;
 }
 
 .bottom-div {
@@ -63,4 +88,51 @@ body {
 
 .no-scroll {
   overflow: hidden;
+}
+
+.folder {
+  animation: folder 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+.paper1 {
+  animation: folder 0.7s ease-out forwards 0.4s;
+  opacity: 0;
+}
+
+.paper2 {
+  animation: folder 0.7s ease-out forwards 0.8s;
+  opacity: 0;
+}
+
+.paper3 {
+  animation: folder 0.7s ease-out forwards 0.12s;
+  opacity: 0;
+}
+
+@keyframes folder {
+  from {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fav-woman {
+  animation: woman 0.7s ease-out forwards 0.16s;
+  opacity: 0;
+}
+
+@keyframes woman {
+  from {
+    opacity: 0;
+    transform: translatex(100vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

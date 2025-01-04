@@ -86,14 +86,11 @@ const Navbar = () => {
             <NavLink to="/" className="font-[100] text-[1rem] ">
               Home
             </NavLink>
-            <NavLink to="/films" className="font-[300] text-[1.1rem] ">
-              Films
-            </NavLink>
-            <NavLink to="/tvlives" className="font-[300] text-[1.1rem] ">
-              TV Lives
-            </NavLink>
             <NavLink to="/favorite" className="font-[300] text-[1.1rem] ">
               Favorites
+            </NavLink>
+            <NavLink to="/about" className="font-[300] text-[1.1rem] ">
+              About
             </NavLink>
           </div>
           {/* Search Icon to Trigger the Overlay */}
@@ -130,28 +127,6 @@ const Navbar = () => {
               Home
             </NavLink>
             <NavLink
-              to="/films"
-              onClick={toggleMenu}
-              className={({ isActive }) =>
-                isActive
-                  ? "text-yellow-600 bg-black font-[600] text-[1.2rem] w-[120px] flex items-center justify-center py-[5px] rounded-[30px]"
-                  : "text-white font-[600] text-[1.2rem] border w-[120px] flex items-center justify-center py-[5px] rounded-[30px]"
-              }
-            >
-              Films
-            </NavLink>
-            <NavLink
-              to="/tvlives"
-              onClick={toggleMenu}
-              className={({ isActive }) =>
-                isActive
-                  ? "text-yellow-600 bg-black font-[600] text-[1.2rem] w-[120px] flex items-center justify-center py-[5px] rounded-[30px]"
-                  : "text-white font-[600] text-[1.2rem] border w-[120px] flex items-center justify-center py-[5px] rounded-[30px]"
-              }
-            >
-              TV Lives
-            </NavLink>
-            <NavLink
               to="/favorite"
               onClick={toggleMenu}
               className={({ isActive }) =>
@@ -162,13 +137,24 @@ const Navbar = () => {
             >
               Favorites
             </NavLink>
+            <NavLink
+              to="/about"
+              onClick={toggleMenu}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-yellow-600 bg-black font-[600] text-[1.2rem] w-[120px] flex items-center justify-center py-[5px] rounded-[30px]"
+                  : "text-white font-[600] text-[1.2rem] border w-[120px] flex items-center justify-center py-[5px] rounded-[30px]"
+              }
+            >
+              About
+            </NavLink>
           </div>
         )}
       </nav>
       {/* Search Overlay */}
       {isSearchVisible && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-85 z-[100] flex items-center justify-center ">
-          <div className="bg-black p-6 rounded-lg shadow-lg w-fit">
+          <div className="bg-black p-6 rounded-lg mt-[80px] h-full shadow-lg w-fit">
             <button
               onClick={() => setIsSearchVisible(false)}
               className="absolute top-2 right-2 text-gray-600 text-xl"
@@ -182,7 +168,7 @@ const Navbar = () => {
               placeholder="Search for a movie..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full p-2 border rounded-md bg-black"
+              className="w-full p-2  border rounded-md bg-black"
             />
 
             {/* Filtered Movie List */}

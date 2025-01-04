@@ -6,7 +6,7 @@ import Github from "../assets/svg/github.svg";
 
 const Footer = () => {
   return (
-    <div className="flex w-screen justify-between p-[10px] bg-gray-950 mt-[20px]">
+    <div className="flex w-screen justify-between p-[10px] bg-gray-950 mt-[20px] bottom-0">
       <div className="font-[300] text-[0.9rem] w-[200px]">
         &copy; 2025{" "}
         <span className="font-[600] text-yellow-600">Movie Chill</span>{" "}

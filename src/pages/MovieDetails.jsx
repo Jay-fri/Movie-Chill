@@ -122,7 +122,7 @@ const MovieDetails = () => {
             </div>
           </div>
           <div className="relative group cursor-pointer">
-            <img className="rounded-[9px]" src={Madame} alt="Movie" />
+            <img className="rounded-[9px]" src={Similar6} alt="Movie" />
             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded">
               <button className="text-white bg-yellow-600 px-4 py-2 rounded lg:hover:bg-yellow-700 transition">
                 Watch

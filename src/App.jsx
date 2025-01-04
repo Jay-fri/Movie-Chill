@@ -3,8 +3,6 @@ import "./App.css";
 import { Outlet, Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Films from "./pages/Films";
-import Tvlives from "./pages/Tvlives";
 import Favorite from "./pages/Favorite";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -14,6 +12,7 @@ import Profile2 from "./pages/Profile2";
 import MovieDetails from "./pages/MovieDetails";
 import BackButton from "./components/BackButton";
 import Footer from "./components/Footer";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -22,8 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/films" element={<Films />} />
-          <Route path="/tvlives" element={<Tvlives />} />
+          <Route path="/about" element={<About />} />
           <Route path="/favorite" element={<Favorite />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
