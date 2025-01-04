@@ -1,16 +1,54 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../assets/svg/moviechilllogo.svg";
 import { Link, NavLink } from "react-router-dom";
 import Open from "../assets/svg/menu.svg";
 import Close from "../assets/svg/close.svg";
 import SearchIcon from "../assets/svg/searchicon.svg";
 import Profile from "../assets/svg/profilepic.svg";
+import Similar1 from "../assets/img/similar1.jpg";
+import Similar2 from "../assets/img/similar2.jpg";
+import Similar3 from "../assets/img/similar3.jpg";
+import Similar4 from "../assets/img/similar4.jpg";
+import Similar5 from "../assets/img/similar5.jpg";
+import Similar6 from "../assets/img/similar6.jpg";
 
 const movies = [
-  { id: 1, title: "Movie 1", description: "Description of Movie 1" },
-  { id: 2, title: "Movie 2", description: "Description of Movie 2" },
-  { id: 3, title: "Movie 3", description: "Description of Movie 3" },
-  { id: 4, title: "Movie 4", description: "Description of Movie 4" },
+  {
+    id: 1,
+    title: "BatMan",
+    image: Similar1,
+    description: "Description of Movie 1",
+  },
+  {
+    id: 2,
+    title: "Monalisa",
+    image: Similar2,
+    description: "Description of Movie 2",
+  },
+  {
+    id: 3,
+    title: "Godzilla",
+    image: Similar3,
+    description: "Description of Movie 3",
+  },
+  {
+    id: 4,
+    title: "Gremlins",
+    image: Similar4,
+    description: "Description of Movie 4",
+  },
+  {
+    id: 5,
+    title: "Screw on head",
+    image: Similar5,
+    description: "Description of Movie 4",
+  },
+  {
+    id: 6,
+    title: "Madame",
+    image: Similar6,
+    description: "Description of Movie 4",
+  },
 ];
 
 const Navbar = () => {
@@ -26,6 +64,18 @@ const Navbar = () => {
   const filteredMovies = movies.filter((movie) =>
     movie.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  useEffect(() => {
+    if (isSearchVisible) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [isSearchVisible]);
 
   return (
     <div className="z-50">
@@ -70,6 +120,7 @@ const Navbar = () => {
           <div className="lg:hidden p-[20px] bg-gray-700 flex flex-col gap-6 items-center w-[55vw] absolute right-0">
             <NavLink
               to="/"
+              onClick={toggleMenu}
               className={({ isActive }) =>
                 isActive
                   ? "text-yellow-600 bg-black font-[600] text-[1.2rem] w-[120px] flex items-center justify-center py-[5px] rounded-[30px]"
@@ -80,6 +131,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/films"
+              onClick={toggleMenu}
               className={({ isActive }) =>
                 isActive
                   ? "text-yellow-600 bg-black font-[600] text-[1.2rem] w-[120px] flex items-center justify-center py-[5px] rounded-[30px]"
@@ -90,6 +142,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/tvlives"
+              onClick={toggleMenu}
               className={({ isActive }) =>
                 isActive
                   ? "text-yellow-600 bg-black font-[600] text-[1.2rem] w-[120px] flex items-center justify-center py-[5px] rounded-[30px]"
@@ -100,6 +153,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/favorite"
+              onClick={toggleMenu}
               className={({ isActive }) =>
                 isActive
                   ? "text-yellow-600 bg-black font-[600] text-[1.2rem] w-[120px] flex items-center justify-center py-[5px] rounded-[30px]"
@@ -113,7 +167,7 @@ const Navbar = () => {
       </nav>
       {/* Search Overlay */}
       {isSearchVisible && (
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-85 z-50 flex items-center justify-center">
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-85 z-[100] flex items-center justify-center ">
           <div className="bg-black p-6 rounded-lg shadow-lg w-fit">
             <button
               onClick={() => setIsSearchVisible(false)}
@@ -137,15 +191,14 @@ const Navbar = () => {
                 filteredMovies.map((movie) => (
                   <div
                     key={movie.id}
-                    className="border p-4 rounded-md shadow-lg mt-2"
+                    className="border p-1 rounded-md shadow-lg mt-2 "
                   >
-                    <h2 className="text-xl font-bold">{movie.title}</h2>
-                    <p>{movie.description}</p>
-                    <Link
-                      to={`/movie/${movie.id}`}
-                      className="text-blue-500 mt-2 inline-block"
-                    >
-                      See Details
+                    <Link to={`/movie/${movie.id}`}>
+                      <img
+                        className="w-[100px]  rounded-md"
+                        src={movie.image}
+                        alt=""
+                      />
                     </Link>
                   </div>
                 ))

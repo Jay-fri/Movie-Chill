@@ -11,10 +11,14 @@ import Signup from "./pages/Signup";
 import Resetpassword from "./pages/Resetpassword";
 import Profile from "./pages/Profile";
 import Profile2 from "./pages/Profile2";
+import MovieDetails from "./pages/MovieDetails";
+import BackButton from "./components/BackButton";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div>
+      <BackButton />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -26,8 +30,10 @@ function App() {
           <Route path="/resetpassword" element={<Resetpassword />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile2" element={<Profile2 />} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
         </Route>
       </Routes>
+      <Footer />
     </div>
   );
 }

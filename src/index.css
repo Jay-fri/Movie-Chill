@@ -25,3 +25,42 @@ body {
 .page.slide-right {
   transform: translateX(100%);
 }
+
+.scroller-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.scroller {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.scroller-image {
+  width: 130px;
+  height: 90px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+  flex-shrink: 0;
+}
+
+.scroller-image:hover,
+.scroller-image.selected {
+  border: 2px solid orange;
+}
+
+.bottom-div {
+  margin-top: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.no-scroll {
+  overflow: hidden;
+}

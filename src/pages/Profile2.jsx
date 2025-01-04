@@ -74,7 +74,7 @@ const Profile2 = () => {
             <button
               key={button.id}
               onClick={() => handleButtonSelect(index)}
-              className={`w-[160px] font-[300] text-[1rem] px-[30px] py-[10px] border-[2px] border-yellow-600 rounded-[30px] hover:bg-yellow-600 transition-all ${
+              className={`w-[160px] font-[300] text-[1rem] px-[30px] py-[10px] border-[2px] border-yellow-600 rounded-[30px]  transition-all ${
                 selectedButtons[index] ? "bg-yellow-600" : "bg-transparent"
               }`}
             >

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Profilepic from "../assets/svg/profilepic.svg";
 import Profile2 from "./Profile2";
+import Footer from "../components/Footer";
 
 const Profile = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
